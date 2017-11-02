@@ -1,0 +1,21 @@
+{
+    "name": "cedric/simple-php-blog",
+    "description": "A simple blog in PHP where everyone can submit and manage posts",
+    "type": "project",
+    "authors": [
+        {
+            "name": "CedricF67",
+            "email": "cedric.falda@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "src/appbundle/controller",
+            "Entities\\": "src/appbundle/entity",
+            "Config\\": "vendor/corebundle/config",
+            "Models\\": "vendor/corebundle/models"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
