@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block headertype %}post{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block heading %}{{ title }}{% endblock %}
+{% block subheading %}{{ subtitle }}{% endblock %}
+{% block postinfo %}<span class="meta">Posté par {{ author }} le {{ createddate }}</span>{% endblock %}
+
+{% block content %}
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p>{{ content }}</p>
+            <div class="post-preview">
+              <p class="post-meta">Dernière modification le {{ modifieddate }}.</p>
+            </div>
+            <div class="clearfix">
+              <a class="btn btn-secondary" href="update-{{id}}">Modifier ce billet</a>
+              <a class="btn btn-secondary" href="delete-{{id}}">Supprimer ce billet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+{% endblock %}
