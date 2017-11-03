@@ -58,7 +58,9 @@ class Database {
 	// Update a post based on it's id :
 
 	public function update($attributes) {
-		
+		$query = $this->getPDO()->prepare('UPDATE post SET title = :title, subtitle = :subtitle, author = :author, modifieddate = now(), content = :content WHERE id = :id');
+		$query->execute($attributes);
+		return $query;
 	}
 
 	// Delete a post from the database based on its id :

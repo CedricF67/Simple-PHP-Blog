@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block headertype %}site{% endblock %}
+{% block title %}Modifier le billet{% endblock %}
+{% block heading %}Modifier le billet{% endblock %}
+{% block subheading %}Modifier un billet du blog{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Modifiez le formulaire çi-dessous pour modifier le billet sélectionné :</p>
+          <form name="addPost" id="addForm" method="post" action="update-{{ id }}">
+            <input type="hidden" name="id" value="{{ id }}">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Titre</label>
+                <input type="text" class="form-control" placeholder="Titre" id="title" name="title" value="{{ title }}" required data-validation-required-message="Vous devez entrer un titre pour votre billet !">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Sous-titre</label>
+                <input type="text" class="form-control" placeholder="Sous-titre" id="subtitle" name="subtitle" value="{{ subtitle }}" required data-validation-required-message="Veuillez entrer un sous-tire pour votre billet !">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Auteur</label>
+                <input type="text" class="form-control" placeholder="Auteur" id="author" name="author" value="{{ author }}" required data-validation-required-message="Veuillez entrer vôtre nom !">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Message</label>
+                <textarea rows="5" class="form-control" placeholder="Message" id="content" name="content" required data-validation-required-message="Veuillez entrer le contenu de votre billet !">{{ content }}</textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-secondary" id="updatePostButton">Modifier ce billet</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

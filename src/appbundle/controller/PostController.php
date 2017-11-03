@@ -55,7 +55,34 @@ class PostController extends Controller {
     }
 
     public function updateAction($id) {
-        echo 'update' . $id;
+        if (!isset($_POST['title']) && !isset($_POST['subtitle']) && !isset($_POST['author']) && !isset($_POST['content'])) {
+            $query = $this->db->show(
+                [
+                    'id' => $id
+                ]);
+            $post= new Post($query[0]);
+            echo $this->twig->render('post\update.html',
+                [
+                    "id" => $post->getid(),
+                    "title" => $post->getTitle(),
+                    "subtitle" => $post->getSubtitle(),
+                    "author" => $post->getAuthor(),
+                    "createddate" => $post->getCreateddate(),
+                    "modifieddate" => $post->getModifieddate(),
+                    "content" => $post->getContent()
+                ]
+            );
+        } else {
+            $query = $this->db->update(
+            [
+                'id' => $_POST['id'],
+                'title' => $_POST['title'],
+                'subtitle' => $_POST['subtitle'],
+                'author' => $_POST['author'],
+                'content' => $_POST['content']
+            ]);
+            $this->showAction($id);
+        }
     }
 
 }
