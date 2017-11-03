@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block headertype %}site{% endblock %}
+{% block title %}Les billets{% endblock %}
+{% block heading %}Les billets{% endblock %}
+{% block subheading %}Voici la liste de tous les billets{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          {% for post in postslist %}
+          <div class="post-preview">
+            <a href="show-{{ post.id }}">
+              <h2 class="post-title">
+                {{ post.title }}
+              </h2>
+              <h3 class="post-subtitle">
+                {{ post.subtitle }}
+              </h3>
+            </a>
+            <p class="post-meta">Posté par {{ post.author }} le {{ post.createddate }} (dernière modification le {{ post.modifieddate }})</p>
+          </div>
+          <hr>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+{% endblock %}
