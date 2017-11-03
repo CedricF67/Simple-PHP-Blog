@@ -17,5 +17,7 @@
         }
     },
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "twig/twig": "^1.35"
+    }
 }

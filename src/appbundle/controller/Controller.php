@@ -9,6 +9,10 @@ class Controller {
 	protected $twig;
 
 	public function __construct() {
+		// Twig Configuration :
+      	$loader = new \Twig_Loader_Filesystem('../app/resources/views/templates/');
+      	$this->twig = new \Twig_Environment($loader, array('cache' => false,));
+      	
       	// Loading configuration with DB parametters :
 		$config = \Config\Config::getInstance();
       	
