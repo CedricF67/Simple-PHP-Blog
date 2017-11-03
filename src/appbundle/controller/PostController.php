@@ -23,7 +23,29 @@ class PostController extends Controller {
     }
 
     public function deleteAction($id) {
-        echo 'delete' . $id;
+        if (isset($_GET['delete'])) {
+            if ($_GET['delete'] === 'yes') {
+                $this->db->delete(
+                    [
+                        'id' => $id
+                    ]);
+                header('Location:../posts/list');
+            }
+        }
+        $query = $this->db->show(
+            [
+                'id' => $id
+            ]);
+        $post= new Post($query[0]);
+        echo $this->twig->render('post\delete.html',
+            [
+                "id" => $post->getid(),
+                "title" => $post->getTitle(),
+                "subtitle" => $post->getSubtitle(),
+                "author" => $post->getAuthor(),
+                "content" => $post->getContent()
+            ]
+        );
     }
 
     public function listAction() {

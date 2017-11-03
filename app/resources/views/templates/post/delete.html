@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block headertype %}site{% endblock %}
+{% block title %}Supprimer le billet{% endblock %}
+{% block heading %}Supprimer le billet{% endblock %}
+{% block subheading %}Confirmer la suppression du billet ?{% endblock %}
+
+{% block content %}
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p>Le billet suivant est sur le point d'être supprimé :</p>
+            <p>Titre : {{ title }}<br />
+            Sous-titre : {{ subtitle }}<br />
+            Auteur : {{ author }}<br />
+            Contenu : {{ content }}</p>
+            <p>Etes-vous certain de vouloir le supprimer ? Cette action est iréversible.</p>
+            <div class="clearfix">
+              <a class="btn btn-secondary" href="delete-{{id}}?delete=yes">Oui</a>
+              <a class="btn btn-secondary" href="show-{{id}}">Non</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+{% endblock %}
