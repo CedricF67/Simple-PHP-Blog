@@ -47,7 +47,9 @@ class Database {
 	// Insert a post in the database :
 
 	public function insert($attributes) {
-		
+		$query = $this->getPDO()->prepare('INSERT INTO post (title, subtitle, author, createddate, modifieddate, content) VALUES (:title, :subtitle, :author, now(), now(), :content)');
+		$query->execute($attributes);
+		return $query;
 	}
 
 	// Update a post based on it's id :
@@ -65,7 +67,9 @@ class Database {
 	// Get the last id from tha table :
 
 	public function lastid() {
-		
+		$query = $this->getPDO()->query('SELECT MAX(id) FROM post');
+		$data = $query->fetch(PDO::FETCH_ASSOC);
+		return $data;
 	}
 
 }
