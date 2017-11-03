@@ -66,7 +66,9 @@ class Database {
 	// Delete a post from the database based on its id :
 
 	public function delete($attributes) {
-		
+		$query = $this->getPDO()->prepare('DELETE FROM post WHERE id = :id');
+		$query->execute($attributes);
+		return $query;
 	}
 
 	// Get the last id from tha table :
