@@ -41,7 +41,10 @@ class Database {
 	// Show a specific post based on its id :
 
 	public function show($attributes) {
-		
+		$query = $this->getPDO()->prepare('SELECT id, title, subtitle, author, DATE_FORMAT(createddate, \'%d/%m/%Y à %Hh%i\') AS createddate, DATE_FORMAT(modifieddate, \'%d/%m/%Y à %Hh%i\') AS modifieddate, content FROM post WHERE id = :id');
+		$query->execute($attributes);
+		$data = $query->fetchall();
+		return $data;
 	}
 
 	// Insert a post in the database :

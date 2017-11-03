@@ -36,7 +36,22 @@ class PostController extends Controller {
     }
 
     public function showAction($id) {
-        echo 'show' . $id;
+        $query = $this->db->show(
+            [
+                'id' => $id
+            ]);
+        $post= new Post($query[0]);
+        echo $this->twig->render('post\show.html',
+            [
+                "id" => $post->getid(),
+                "title" => $post->getTitle(),
+                "subtitle" => $post->getSubtitle(),
+                "author" => $post->getAuthor(),
+                "createddate" => $post->getCreateddate(),
+                "modifieddate" => $post->getModifieddate(),
+                "content" => $post->getContent()
+            ]
+        );
     }
 
     public function updateAction($id) {
