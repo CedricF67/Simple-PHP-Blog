@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-class IndexController {
+class IndexController extends Controller {
 
 	public function indexAction(){
 		echo 'index';
