@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block headertype %}site{% endblock %}
+{% block title %}Cédric FALDA{% endblock %}
+{% block heading %}Cédric FALDA{% endblock %}
+{% block subheading %}Un développeur d'avenir{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Bonjour !</p>
+          <img src="web/assets/img/photo.png" alt="Ma photo" class="pull-right" />
+          <p>Je m'appelle Cédric FALDA, et je suit actuellement en formation pour devenir développeur web PHP/Symphony grâce à OpenclassRooms. J'ai débuté cette formation au mois de janvier 2017, et j'ai déja beaucoup appris:</p>
+          <p>- J'ai commencé par ré-apprendre le language HTML 5 ainsi que le CSS 3. Une formalité obligatoire pour partir sur de bonnes bases...<br />
+          - Ensuite, j'ai commencé à manipuler le CMS Wordpress. Grâce à mes aquis, j'ai mis en place un blog qui fonctionne grâce à ce CMS.<br />
+          - J'ai par la suite continué à mettre mes compétences à l'épreuve en me séparrant d'un CMS et en codant un prototype de site web le plus complet possible sans utiliser de PHP. J'ai utilisé le framework bootstrap pour parvenir à mes fins.<br />
+          - Je me suis ensuite penché sur les étapes qui caractérisent la gestion d'un projet : diagrammes UML, gestions d'une base de donnée SQL, etc...<br />
+          - Me voici finalement ici, sur ce blog que j'ai appris à réaliser entièrement en PHP orienté objet.</p>
+          <p>Et ce n'est pas terminé ! Ma formation continue et j'ai encore beaucoup de choses à apprendre.</p>
+          <p>Vous pouvez me contacter en remplissant le formulaire suivant :</p>
+          <form name="contactForm" id="contactForm" method="post" action="contactForm">
+            <input type="hidden" name="subject" value="Formulaire de contact">
+            <input type="hidden" name="access" value="stopspam">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Nom et prénom</label>
+                <input type="text" class="form-control" placeholder="Nom et prénom" name="name" id="name" required data-validation-required-message="Veuillez entrer vos noms et prénoms.">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Adresse Email</label>
+                <input type="email" class="form-control" placeholder="Adresse Email" name="email" id="email" required data-validation-required-message="Veuillez votre adresse email.">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Message</label>
+                <textarea rows="5" class="form-control" placeholder="Message" name="message" id="message" required data-validation-required-message="Veuillez entrer un message."></textarea>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-secondary" id="sendMessageButton">Envoyer</button>
+            </div>
+          </form>
+          <p>Retrouvez également mon CV en cliquant <a href="/web/assets/pdf/cv">ici</a>.</p>
+        </div>
+      </div>
+    </div>
+{% endblock %}
