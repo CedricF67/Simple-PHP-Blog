@@ -4,7 +4,7 @@ namespace Controllers;
 
 use Entities\Post;
 
-class PostController {
+class PostController extends Controller {
 
 	public function createAction() {
         echo 'create';
