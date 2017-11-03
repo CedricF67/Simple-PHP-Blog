@@ -33,7 +33,9 @@ class Database {
 	// List all posts :
 
 	public function select() {
-		
+		$query = $this->getPDO()->query('SELECT id, title, subtitle, author, DATE_FORMAT(createddate, \'%d/%m/%Y à %Hh%i\') AS createddate, DATE_FORMAT(modifieddate, \'%d/%m/%Y à %Hh%i\') AS modifieddate, content FROM post ORDER BY id DESC');
+		$data = $query->fetchall(PDO::FETCH_OBJ);
+		return $data;
 	}
 
 	// Show a specific post based on its id :

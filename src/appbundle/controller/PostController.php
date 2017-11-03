@@ -14,8 +14,13 @@ class PostController extends Controller {
         echo 'delete' . $id;
     }
 
-	public function listAction() {
-        echo 'list';
+    public function listAction() {
+        $postslist = $this->db->select();
+        echo $this->twig->render('post\list.html',
+            [
+                "postslist" => $postslist
+            ]
+        );
     }
 
     public function showAction($id) {
