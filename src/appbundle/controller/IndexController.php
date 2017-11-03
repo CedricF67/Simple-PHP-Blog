@@ -9,7 +9,8 @@ class IndexController extends Controller {
 	}
 
 	public function contactFormAction(){
-		echo 'contactForm';
+		require '../src/appbundle/form/contactform.php';
+		echo $this->twig->render('index\contact.html');
 	}
 
 }
