@@ -2,6 +2,8 @@
 
 namespace Controllers;
 
+use Models\Controller;
+
 class IndexController extends Controller {
 
 	public function indexAction(){

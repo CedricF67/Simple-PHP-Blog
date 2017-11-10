@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Models\Controller;
 use Entities\Post;
 
 class PostController extends Controller {
