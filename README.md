@@ -2,7 +2,7 @@
 A simple blog in PHP where everyone can submit and manage posts.
 
 # 1. To install :
-1) Copy all folders and files to your server.
+1) Copy all folders and files but 'post.sql' to your server.
 2) Set the database following the informations bellow.
 3) That's it, you'r ready to go!
 
