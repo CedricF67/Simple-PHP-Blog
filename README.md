@@ -8,14 +8,7 @@ A simple blog in PHP where everyone can submit and manage posts.
 
 # 2. Setting up the database :
 1) Make a new database with the name of your choice.
-2) Inside this database, create a table named 'post'. It must contin the following collums :
-	- id (int(10)) auto_increment not_null
-	- author (varchar(255))
-	- title (varchar(255))
-	- subtitle (varchar(255))
-	- createddate (datetime)
-	- modifieddate (datetime)
-	- content (longtext)
+2) Import the content of the 'post.sql' file by using phpmyadmin for exemple. This will create a table called 'post' with all fields needed.
 3) Open the app/config/Config.php file, and change the default values with the correct ones :
 	- db_user is the username you use to connect to the database
 	- db_pass is the password for that username
